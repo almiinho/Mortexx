@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+    <link rel="stylesheet" type="text/css" href="todo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mortex</h1>
+  </header>
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="to-do.html">To-Do</a></li>
+        <li><a href="registration.html">Sign up</a></li>
+        <li><a href="puzzle.html">Puzzle</a></li>
+        <li><a href="monitoring.html">Monitoring</a></li>
+    </ul>
+    </nav>
+    
+    <input type="text" id="taskInput" placeholder="Add a new task">
+  <button id="addTaskButton">Add Task</button>
+  
+  <ul id="taskList"> </ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="animated-div"></div>
+  <script>
+    
+    const todoList = {
+      tasks: [],
+
+     
+      addTask: function(taskText) {
+        this.tasks.push(taskText);
+      },
+
+     
+      removeTask: function(taskText) {
+        const index = this.tasks.indexOf(taskText);
+        if (index !== -1) {
+          this.tasks.splice(index, 1);
+        }
+      },
+
+      
+      updateTaskList: function() {
+  const taskList = document.getElementById("taskList");
+  taskList.innerHTML = "";
+
+  this.tasks.forEach(taskText => {
+    const listItem = document.createElement("li");
+    listItem.textContent = taskText;
+    listItem.classList.add("task-item"); 
+
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("remove-button"); 
+
+    removeButton.addEventListener("click", () => {
+      this.removeTask(taskText);
+      this.updateTaskList();
+    });
+
+    listItem.appendChild(removeButton);
+    taskList.appendChild(listItem);
+  });
+},
+
+    };
+
+    const taskInput = document.getElementById("taskInput");
+    const addTaskButton = document.getElementById("addTaskButton");
+
+    
+    addTaskButton.addEventListener("click", () => {
+      const taskText = taskInput.value.trim();
+      if (taskText !== "") {
+        todoList.addTask(taskText);
+        todoList.updateTaskList();
+        taskInput.value = ""; 
+      }
+    });
+
+    const animatedDiv = document.getElementById("animated-div");
+      let position = 1;
+      let direction = -1; 
+
+      function animate() {
+        position += direction * 5; 
+
+       
+        if (
+          position >= window.innerWidth - animatedDiv.clientWidth ||
+          position <= 0
+        ) {
+          direction *= -1; 
+        }
+
+        animatedDiv.style.left = position + "px";
+        requestAnimationFrame(animate);
+      }
+
+      animate(); 
+  </script>
+    
+  </body>
+</html>

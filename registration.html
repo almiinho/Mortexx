@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Mortex</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Mortex</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="to-do.html">To-Do</a></li>
+            <li><a href="registration.html">Sign up</a></li>
+            <li><a href="puzzle.html">Puzzle</a></li>
+            <li><a href="monitoring.html">Monitoring</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <span class="error" id="username-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error" id="password-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <span class="error" id="confirm-password-error"></span>
+            </div>
+            <button type="submit" id="register-button" >Register</button>
+            <div id="registration-success"></div>
+        </form>
+    </div>
+    <script src="script.js"></script><br></br>
+
+
+    <footer>
+        <p>&copy; Mortex 2023</p>
+    </footer>
+</body>
+</html>

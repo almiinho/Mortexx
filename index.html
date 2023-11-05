@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Mortex</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Mortex</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="to-do.html">To-Do</a></li>
+            <li><a href="registration.html">Sign up</a></li>
+            <li><a href="puzzle.html">Puzzle</a></li>
+            <li><a href="monitoring.html">Monitoring</a></li>
+        </ul>
+    </nav>
+    <section> 
+        <div class="container"> 
+          <div class="row"> 
+            <div class="col-md-6"> 
+              <div class="card"> 
+                <img 
+                  src="https://www.sportsdirect.com/images/products/53303370_l.jpg" 
+                  class="card-img-top" 
+                  alt="Product 1" 
+                  height="500px" 
+                  width="1000px" 
+                /> 
+                <div class="card-body"> 
+                  <h5 class="card-title">Adidas Fleece 3-Stripes Full-Zip Hoodie</h5> 
+                  <h6 class="card-text">Adidas Essentials Fleece 3-Stripes Full-Zip Hoodie maleObjects in motion stay in motion. Even after practice is wrapped up, you want the same freedom to move through life with ease. This adidas hoodie has you covered. Soft fleece feels good against the skin, which means less distractions and more comfort. Go about your routine without a single roadblock.Runs normal. Order your usual size. Please note: The style you receive may vary from the image shown</h6> 
+                  <button class="buy-button" onclick="openCardModal(1)">Buy Now</button>
+                </div> 
+              </div> 
+            </div> 
+            <div class="col-md-6"> 
+              <div class="card"> 
+                <img 
+                  src="https://shoprepforces.com/cdn/shop/products/Untitleddesign_66_bfc5fb88-7d74-4db4-8c83-859f35c06e98.png?v=1687897041&width=2048" 
+                  class="card-img-top" 
+                  alt="Product 2" 
+                  height="500px" 
+                  width="1000px" 
+                /> 
+                <div class="card-body"> 
+                  <h5 class="card-title">Nike Sportswear Tech Fleece</h5> 
+                  <h6 class="card-text">Blending 2 of our most iconic looks, this full-zip hoodie draws design inspiration from our timeless Windrunner jacket as well as our Tech Fleece jacket. It's designed to feel relaxed through the shoulders, chest and body for an athletic fit you can layer. Our premium, smooth-on-both-sides fleece feels warmer and softer than ever, while keeping the same lightweight build you love.</h6> 
+                  <button class="buy-button" onclick="openCardModal(1)">Buy Now</button>
+                </div> 
+              </div> 
+            </div> 
+            </div>
+        </div>
+        </section>
+    
+    <footer>
+        <p>&copy; Mortex 2023</p>
+    </footer>
+
+        <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCardModal()">&times;</span>
+            <h2>Enter Card Details</h2>
+            <form>
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" required><br><br>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required><br><br>
+
+                <button class="submit-button" onclick="processPayment()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <section>
+      <h3>Your order will arrive in:</h3>
+    </section>
+    <div class="countdown">
+      <div class="timer">
+        <span id="days">10</span>
+        <span id="hours">15</span>
+        <span id="minutes">45</span>
+      </div>
+      <div class="labels">
+        <span>Days</span>
+        <span>Hours</span>
+        <span>Minutes</span>
+      </div>
+    </div>
+
+    <script>
+        function openCardModal(productId) {
+            var modal = document.getElementById("cardModal");
+            modal.style.display = "block";
+        }
+
+        function closeCardModal() {
+            var modal = document.getElementById("cardModal");
+            modal.style.display = "none";
+        }
+
+        function processPayment() {
+            alert("Simulating card identification and payment processing.");
+            closeCardModal();
+        }
+        function updateCountdown() {
+        const targetDate = new Date("2023-10-27 12:00").getTime();
+        const currentDate = new Date().getTime();
+        const timeLeft = targetDate - currentDate;
+
+        if (timeLeft <= 0) {
+          document.getElementById("days").textContent = "10";
+          document.getElementById("hours").textContent = "15";
+          document.getElementById("minutes").textContent = "45";
+        } else {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = formatTime(days);
+          document.getElementById("hours").textContent = formatTime(hours);
+          document.getElementById("minutes").textContent = formatTime(minutes);
+        }
+      }
+
+      function formatTime(time) {
+        return time < 10 ? "0" + time : time;
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+
+  </body>
+</html>

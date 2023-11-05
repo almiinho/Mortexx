@@ -1,0 +1,244 @@
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    background-color: #444;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.product-list article {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.product-list img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.buy-button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.about-us {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    text-align: justify;
+}
+
+.about-us h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.contact {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.countdown {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .timer span {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .labels span {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  #notification {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+#puzzle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: #f0f0f0;
+  }
+  
+  .puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border: 2px solid #fff;
+    margin: 5px;
+  }
+  
+  #puzzle-image {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #puzzle-image img {
+    max-width: 100%;
+  }
+  .chart {
+    width: 300px;
+    height: 200px;
+  }
+
+  .pie-chart {
+    width: 200px;
+    height: 200px;
+  }
+  .row {
+    display: flex;
+  }
+  
+  #dropBox1,
+  #dropBox2,
+  #dropBox3,
+  #dropBox4,
+  #dropBox5,
+  #dropBox6 {
+    width: 200px; 
+    height: 200px; 
+    box-sizing: border-box;
+    border: 2px dashed #000;
+    margin: 10px;
+  }
+  
+  
